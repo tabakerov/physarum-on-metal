@@ -46,10 +46,10 @@ class Renderer : NSObject {
                                     Float.random(in: 0.0...Float(dimentions))
                                 ),
                                 Direction: SIMD2<Float>(
-                                    Float.random(in: -2.0...2.0),
-                                    Float.random(in: -2.0...2.0)
+                                    Float.random(in: -10.0...10.0),
+                                    Float.random(in: -10.0...10.0)
                                 ),
-                Intensity: SIMD3<Float>(Float.random(in: 0.2...10), Float.random(in: 0.2...10), Float.random(in: 0.2...10))
+                Intensity: SIMD3<Float>(Float.random(in: 0.2...3), Float.random(in: 0.2...3), Float.random(in: 0.2...3))
                 ))
         }
         
