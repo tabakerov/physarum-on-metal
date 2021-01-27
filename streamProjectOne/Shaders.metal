@@ -13,9 +13,71 @@ struct Vertex {
     float2 uv;
 };
 
-kernel void kernel_function(texture2d<uint, access::write> texture [[texture(0)]],
+struct Particle {
+    float2 position;
+    float2 direction;
+    float3 intensity;
+};
+
+kernel void compute_function(texture2d<half, access::read_write> texture [[texture(0)]],
+                            device Particle *particles [[buffer(0)]],
                             uint index [[thread_position_in_grid]]) {
-    texture.write(1, uint2(50, 50));
+
+    
+    const float2x2 streight = float2x2(1.0, 0.0, 0.0, 1.0);
+    const float angle = 0.15;
+    const float2x2 rot_right = float2x2(cos(angle), -sin(angle), sin(angle), cos(angle));
+    const float2x2 rot_left = float2x2(cos(-angle), -sin(-angle), sin(-angle), cos(-angle));
+    const float angle_sample = 0.25;
+    const float2x2 sample_rot_right = float2x2(cos(angle_sample), -sin(angle_sample), sin(angle_sample), cos(angle_sample));
+    const float2x2 sample_rot_left = float2x2(cos(-angle_sample), -sin(-angle_sample), sin(-angle_sample), cos(-angle_sample));
+    
+    float2x2 rot;
+    
+    half l_sample = length(texture.read(uint2(particles[index].position + 1.5*(sample_rot_left * particles[index].direction))));
+    half r_sample = length(texture.read(uint2(particles[index].position + 1.5*(sample_rot_right * particles[index].direction))));
+    half f_sample = length(texture.read(uint2(particles[index].position + 1.5*(particles[index].direction))));
+    rot = streight;
+    if (l_sample > r_sample && l_sample > f_sample) {
+        rot = rot_left;
+    }
+    if (r_sample > l_sample && r_sample > f_sample) {
+        rot = rot_right;
+    }
+    
+    const float dimensions = 2000;
+    
+    texture.write(half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
+    particles[index].direction = rot * particles[index].direction;
+    particles[index].position += particles[index].direction;
+    if (particles[index].position.x > dimensions) {
+        particles[index].position.x -= dimensions;
+    }
+    if (particles[index].position.y > dimensions) {
+        particles[index].position.y -= dimensions;
+    }
+    if (particles[index].position.x < 0.0) {
+        particles[index].position.x += dimensions;
+    }
+    if (particles[index].position.y < 0.0) {
+        particles[index].position.y += dimensions;
+    }
+    //particles[index].position = float2(fmod(particles[index].position.x, 400.0), fmod(particles[index].position.y, 400.0));
+}
+
+kernel void blur_function(texture2d<half, access::read_write> texture [[texture(0)]],
+                          uint2 index [[thread_position_in_grid]])
+{
+    half4 out = 1.0/4.0 * texture.read(index)
+    + 1.0/8.0 * texture.read(index+uint2(1,0))
+    + 1.0/8.0 * texture.read(index+uint2(-1,0))
+    + 1.0/8.0 * texture.read(index+uint2(0,1))
+    + 1.0/8.0 * texture.read(index+uint2(0,-1))
+    + 1.0/16.0 * texture.read(index+uint2(1,1))
+    + 1.0/16.0 * texture.read(index+uint2(-1,1))
+    + 1.0/16.0 * texture.read(index+uint2(1,-1))
+    + 1.0/16.0 * texture.read(index+uint2(-1,-1));
+    texture.write(0.999*half4(out.rgba), index);
 }
 
 vertex Vertex vertex_function(constant float4 *vertices [[buffer(0)]],
@@ -27,10 +89,9 @@ vertex Vertex vertex_function(constant float4 *vertices [[buffer(0)]],
 }
 
 fragment float4 fragment_function(Vertex v [[stage_in]],
-                                  texture2d<uint> texture [[texture(0)]]) {
+                                  texture2d<float> texture [[texture(0)]]) {
     constexpr sampler smplr(coord::normalized,
                             address::clamp_to_zero,
                             filter::nearest);
-    uint c = texture.sample(smplr, v.uv).r;
-    return float4(c, 0.0, 0.0, 1.0);
+    return texture.sample(smplr, v.uv);
 };
