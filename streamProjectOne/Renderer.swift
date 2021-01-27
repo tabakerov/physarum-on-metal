@@ -39,7 +39,7 @@ class Renderer : NSObject {
         
         particles = []
         
-        for _ in 1...1000 {
+        for _ in 1...2000 {
             particles.append(Particle(
                                 Position: SIMD2<Float>(
                                     Float.random(in: 0.0...Float(dimentions)),

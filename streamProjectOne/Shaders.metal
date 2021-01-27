@@ -47,9 +47,23 @@ kernel void compute_function(texture2d<half, access::read_write> texture [[textu
     
     const float dimensions = 2000;
     
-    texture.write(half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
+    half4 t = texture.read(uint2(particles[index].position));
+    texture.write(t + 0.25*half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
     particles[index].direction = rot * particles[index].direction;
-    particles[index].position += particles[index].direction;
+    particles[index].position += 0.25 * particles[index].direction;
+    
+    t = texture.read(uint2(particles[index].position));
+    texture.write(t + 0.25*half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
+    
+    particles[index].position += 0.25 * particles[index].direction;
+    t = texture.read(uint2(particles[index].position));
+    texture.write(t + 0.25*half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
+    
+    particles[index].position += 0.25 * particles[index].direction;
+    t = texture.read(uint2(particles[index].position));
+    texture.write(t + 0.25*half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
+    particles[index].position += 0.25 * particles[index].direction;
+    
     if (particles[index].position.x > dimensions) {
         particles[index].position.x -= dimensions;
     }
@@ -77,7 +91,7 @@ kernel void blur_function(texture2d<half, access::read_write> texture [[texture(
     + 1.0/16.0 * texture.read(index+uint2(-1,1))
     + 1.0/16.0 * texture.read(index+uint2(1,-1))
     + 1.0/16.0 * texture.read(index+uint2(-1,-1));
-    texture.write(0.999*half4(out.rgba), index);
+    texture.write(0.99*half4(out.rgba), index);
 }
 
 vertex Vertex vertex_function(constant float4 *vertices [[buffer(0)]],
