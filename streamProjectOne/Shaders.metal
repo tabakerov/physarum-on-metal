@@ -50,33 +50,31 @@ kernel void compute_function(texture2d<half, access::read_write> texture [[textu
     half4 t = texture.read(uint2(particles[index].position));
     texture.write(t + 0.25*half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
     particles[index].direction = rot * particles[index].direction;
+    
     particles[index].position += 0.25 * particles[index].direction;
+    particles[index].position.x = fmod(particles[index].position.x + dimensions, dimensions);
+    particles[index].position.y = fmod(particles[index].position.y + dimensions, dimensions);
     
     t = texture.read(uint2(particles[index].position));
     texture.write(t + 0.25*half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
     
     particles[index].position += 0.25 * particles[index].direction;
+    particles[index].position.x = fmod(particles[index].position.x + dimensions, dimensions);
+    particles[index].position.y = fmod(particles[index].position.y + dimensions, dimensions);
+    
     t = texture.read(uint2(particles[index].position));
     texture.write(t + 0.25*half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
     
     particles[index].position += 0.25 * particles[index].direction;
+    particles[index].position.x = fmod(particles[index].position.x + dimensions, dimensions);
+    particles[index].position.y = fmod(particles[index].position.y + dimensions, dimensions);
+    
     t = texture.read(uint2(particles[index].position));
     texture.write(t + 0.25*half4(particles[index].intensity.r, particles[index].intensity.g, particles[index].intensity.b, 1.0), uint2(particles[index].position));
     particles[index].position += 0.25 * particles[index].direction;
     
-    if (particles[index].position.x > dimensions) {
-        particles[index].position.x -= dimensions;
-    }
-    if (particles[index].position.y > dimensions) {
-        particles[index].position.y -= dimensions;
-    }
-    if (particles[index].position.x < 0.0) {
-        particles[index].position.x += dimensions;
-    }
-    if (particles[index].position.y < 0.0) {
-        particles[index].position.y += dimensions;
-    }
-    //particles[index].position = float2(fmod(particles[index].position.x, 400.0), fmod(particles[index].position.y, 400.0));
+    particles[index].position.x = fmod(particles[index].position.x + dimensions, dimensions);
+    particles[index].position.y = fmod(particles[index].position.y + dimensions, dimensions);
 }
 
 kernel void blur_function(texture2d<half, access::read_write> texture [[texture(0)]],
