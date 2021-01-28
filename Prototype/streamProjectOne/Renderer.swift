@@ -36,7 +36,7 @@ class Renderer : NSObject {
     var particles: [Particle]
     var particlesBuffer: MTLBuffer
     
-    init(metalView: MTKView) {
+    init(metalView: MTKView, size: CGSize) {
         guard let device = MTLCreateSystemDefaultDevice(),
               let commandQueue = device.makeCommandQueue()
         else {
@@ -68,7 +68,7 @@ class Renderer : NSObject {
             MatrixRightSensor: matrixSensR,
             MatrixLeftTurn: matrixTurnL,
             MatrixRightTurn: matrixTurnR,
-            Dimensions: SIMD2<Float>(Float(metalView.drawableSize.width), Float(metalView.drawableSize.height))
+            Dimensions: SIMD2<Float>(Float(size.width), Float(size.height))
         )
         
         Renderer.device = device
@@ -110,10 +110,6 @@ class Renderer : NSObject {
         let fragmentFunction = library?.makeFunction(name: "fragment_function")
         let vertexFunction = library?.makeFunction(name: "vertex_function")
         let blurFunction = library?.makeFunction(name: "blur_function")
-        
-        //let computePipelineDescriptor = MTLComputePipelineDescriptor()
-        //computePipelineDescriptor.computeFunction = kernelFunction
-        //computePipelineDescriptor.computeFunction = blurFunction
         
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.vertexFunction = vertexFunction

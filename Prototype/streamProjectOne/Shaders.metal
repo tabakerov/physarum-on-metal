@@ -32,16 +32,6 @@ kernel void compute_function(texture2d<half, access::read_write> texture [[textu
                              device Particle *particles [[buffer(0)]],
                              constant Uniforms &uniforms [[buffer(1)]],
                              uint index [[thread_position_in_grid]]) {
-
-    /*
-    const float2x2 streight = float2x2(1.0, 0.0, 0.0, 1.0);
-    const float angle = 0.15;
-    const float2x2 rot_right = float2x2(cos(angle), -sin(angle), sin(angle), cos(angle));
-    const float2x2 rot_left = float2x2(cos(-angle), -sin(-angle), sin(-angle), cos(-angle));
-    const float angle_sample = 0.25;
-    const float2x2 sample_rot_right = float2x2(cos(angle_sample), -sin(angle_sample), sin(angle_sample), cos(angle_sample));
-    const float2x2 sample_rot_left = float2x2(cos(-angle_sample), -sin(-angle_sample), sin(-angle_sample), cos(-angle_sample));
-    */
     
     float2x2 rot;
     

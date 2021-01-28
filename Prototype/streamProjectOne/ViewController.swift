@@ -19,7 +19,7 @@ class ViewController: NSViewController {
         }
         let size = CGSize(width: 1920, height: 1080)
         metalView.drawableSize = size
-        renderer = Renderer(metalView: metalView)
+        renderer = Renderer(metalView: metalView, size: size)
         // Do any additional setup after loading the view.
     }
 
