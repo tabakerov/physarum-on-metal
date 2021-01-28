@@ -73,9 +73,9 @@ class Renderer : NSObject {
         let vertexFunction = library?.makeFunction(name: "vertex_function")
         let blurFunction = library?.makeFunction(name: "blur_function")
         
-        let computePipelineDescriptor = MTLComputePipelineDescriptor()
-        computePipelineDescriptor.computeFunction = kernelFunction
-        computePipelineDescriptor.computeFunction = blurFunction
+        //let computePipelineDescriptor = MTLComputePipelineDescriptor()
+        //computePipelineDescriptor.computeFunction = kernelFunction
+        //computePipelineDescriptor.computeFunction = blurFunction
         
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.vertexFunction = vertexFunction
