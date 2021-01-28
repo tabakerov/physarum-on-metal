@@ -17,7 +17,8 @@ class ViewController: NSViewController {
         guard let metalView = view as? MTKView else {
             fatalError("View isn't MTKView")
         }
-        metalView.drawableSize = CGSize(width: 2000, height: 2000)
+        let size = CGSize(width: 1920, height: 1080)
+        metalView.drawableSize = size
         renderer = Renderer(metalView: metalView)
         // Do any additional setup after loading the view.
     }
