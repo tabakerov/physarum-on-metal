@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32D6EBA025C301FB00443F4D /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EB9F25C301FB00443F4D /* Tests_iOS.swift */; };
+		32D6EBAB25C301FB00443F4D /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EBAA25C301FB00443F4D /* Tests_macOS.swift */; };
+		32D6EBAD25C301FB00443F4D /* physarumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EB8425C301F900443F4D /* physarumApp.swift */; };
+		32D6EBAE25C301FB00443F4D /* physarumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EB8425C301F900443F4D /* physarumApp.swift */; };
+		32D6EBAF25C301FB00443F4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EB8525C301F900443F4D /* ContentView.swift */; };
+		32D6EBB025C301FB00443F4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EB8525C301F900443F4D /* ContentView.swift */; };
+		32D6EBB125C301FB00443F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D6EB8625C301FA00443F4D /* Assets.xcassets */; };
+		32D6EBB225C301FB00443F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D6EB8625C301FA00443F4D /* Assets.xcassets */; };
+		32D6EBC625C3093C00443F4D /* PhysarumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EBC525C3093C00443F4D /* PhysarumViewController.swift */; };
+		32D6EBC725C3093C00443F4D /* PhysarumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EBC525C3093C00443F4D /* PhysarumViewController.swift */; };
+		32D6EBCD25C3096200443F4D /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EBCC25C3096200443F4D /* Renderer.swift */; };
+		32D6EBCE25C3096200443F4D /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EBCC25C3096200443F4D /* Renderer.swift */; };
+		32D6EBD425C30BDA00443F4D /* PhysarumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EBD325C30BDA00443F4D /* PhysarumView.swift */; };
+		32D6EBD525C30BDA00443F4D /* PhysarumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EBD325C30BDA00443F4D /* PhysarumView.swift */; };
+		32D6EBE625C313E900443F4D /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EBE525C313E900443F4D /* Shaders.metal */; };
+		32D6EBE725C313E900443F4D /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 32D6EBE525C313E900443F4D /* Shaders.metal */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32D6EB9C25C301FB00443F4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32D6EB7F25C301F900443F4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32D6EB8A25C301FA00443F4D;
+			remoteInfo = "physarum (iOS)";
+		};
+		32D6EBA725C301FB00443F4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32D6EB7F25C301F900443F4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32D6EB9225C301FB00443F4D;
+			remoteInfo = "physarum (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		32D6EB8425C301F900443F4D /* physarumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = physarumApp.swift; sourceTree = "<group>"; };
+		32D6EB8525C301F900443F4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		32D6EB8625C301FA00443F4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32D6EB8B25C301FA00443F4D /* physarum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = physarum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D6EB8E25C301FA00443F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32D6EB9325C301FB00443F4D /* physarum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = physarum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D6EB9525C301FB00443F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32D6EB9625C301FB00443F4D /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		32D6EB9B25C301FB00443F4D /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D6EB9F25C301FB00443F4D /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		32D6EBA125C301FB00443F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32D6EBA625C301FB00443F4D /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D6EBAA25C301FB00443F4D /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		32D6EBAC25C301FB00443F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32D6EBC525C3093C00443F4D /* PhysarumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysarumViewController.swift; sourceTree = "<group>"; };
+		32D6EBCC25C3096200443F4D /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		32D6EBD325C30BDA00443F4D /* PhysarumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysarumView.swift; sourceTree = "<group>"; };
+		32D6EBE525C313E900443F4D /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32D6EB8825C301FA00443F4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D6EB9025C301FB00443F4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D6EB9825C301FB00443F4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D6EBA325C301FB00443F4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32D6EB7E25C301F900443F4D = {
+			isa = PBXGroup;
+			children = (
+				32D6EB8325C301F900443F4D /* Shared */,
+				32D6EB8D25C301FA00443F4D /* iOS */,
+				32D6EB9425C301FB00443F4D /* macOS */,
+				32D6EB9E25C301FB00443F4D /* Tests iOS */,
+				32D6EBA925C301FB00443F4D /* Tests macOS */,
+				32D6EB8C25C301FA00443F4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32D6EB8325C301F900443F4D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				32D6EB8425C301F900443F4D /* physarumApp.swift */,
+				32D6EB8525C301F900443F4D /* ContentView.swift */,
+				32D6EB8625C301FA00443F4D /* Assets.xcassets */,
+				32D6EBCC25C3096200443F4D /* Renderer.swift */,
+				32D6EBC525C3093C00443F4D /* PhysarumViewController.swift */,
+				32D6EBD325C30BDA00443F4D /* PhysarumView.swift */,
+				32D6EBE525C313E900443F4D /* Shaders.metal */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		32D6EB8C25C301FA00443F4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32D6EB8B25C301FA00443F4D /* physarum.app */,
+				32D6EB9325C301FB00443F4D /* physarum.app */,
+				32D6EB9B25C301FB00443F4D /* Tests iOS.xctest */,
+				32D6EBA625C301FB00443F4D /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32D6EB8D25C301FA00443F4D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				32D6EB8E25C301FA00443F4D /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		32D6EB9425C301FB00443F4D /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				32D6EB9525C301FB00443F4D /* Info.plist */,
+				32D6EB9625C301FB00443F4D /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		32D6EB9E25C301FB00443F4D /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				32D6EB9F25C301FB00443F4D /* Tests_iOS.swift */,
+				32D6EBA125C301FB00443F4D /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		32D6EBA925C301FB00443F4D /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				32D6EBAA25C301FB00443F4D /* Tests_macOS.swift */,
+				32D6EBAC25C301FB00443F4D /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32D6EB8A25C301FA00443F4D /* physarum (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32D6EBB525C301FB00443F4D /* Build configuration list for PBXNativeTarget "physarum (iOS)" */;
+			buildPhases = (
+				32D6EB8725C301FA00443F4D /* Sources */,
+				32D6EB8825C301FA00443F4D /* Frameworks */,
+				32D6EB8925C301FA00443F4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "physarum (iOS)";
+			productName = "physarum (iOS)";
+			productReference = 32D6EB8B25C301FA00443F4D /* physarum.app */;
+			productType = "com.apple.product-type.application";
+		};
+		32D6EB9225C301FB00443F4D /* physarum (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32D6EBB825C301FB00443F4D /* Build configuration list for PBXNativeTarget "physarum (macOS)" */;
+			buildPhases = (
+				32D6EB8F25C301FB00443F4D /* Sources */,
+				32D6EB9025C301FB00443F4D /* Frameworks */,
+				32D6EB9125C301FB00443F4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "physarum (macOS)";
+			productName = "physarum (macOS)";
+			productReference = 32D6EB9325C301FB00443F4D /* physarum.app */;
+			productType = "com.apple.product-type.application";
+		};
+		32D6EB9A25C301FB00443F4D /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32D6EBBB25C301FB00443F4D /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				32D6EB9725C301FB00443F4D /* Sources */,
+				32D6EB9825C301FB00443F4D /* Frameworks */,
+				32D6EB9925C301FB00443F4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32D6EB9D25C301FB00443F4D /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = 32D6EB9B25C301FB00443F4D /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		32D6EBA525C301FB00443F4D /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32D6EBBE25C301FB00443F4D /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				32D6EBA225C301FB00443F4D /* Sources */,
+				32D6EBA325C301FB00443F4D /* Frameworks */,
+				32D6EBA425C301FB00443F4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32D6EBA825C301FB00443F4D /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = 32D6EBA625C301FB00443F4D /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32D6EB7F25C301F900443F4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					32D6EB8A25C301FA00443F4D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					32D6EB9225C301FB00443F4D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					32D6EB9A25C301FB00443F4D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 32D6EB8A25C301FA00443F4D;
+					};
+					32D6EBA525C301FB00443F4D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 32D6EB9225C301FB00443F4D;
+					};
+				};
+			};
+			buildConfigurationList = 32D6EB8225C301F900443F4D /* Build configuration list for PBXProject "physarum" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32D6EB7E25C301F900443F4D;
+			productRefGroup = 32D6EB8C25C301FA00443F4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32D6EB8A25C301FA00443F4D /* physarum (iOS) */,
+				32D6EB9225C301FB00443F4D /* physarum (macOS) */,
+				32D6EB9A25C301FB00443F4D /* Tests iOS */,
+				32D6EBA525C301FB00443F4D /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32D6EB8925C301FA00443F4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D6EBB125C301FB00443F4D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D6EB9125C301FB00443F4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D6EBB225C301FB00443F4D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D6EB9925C301FB00443F4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D6EBA425C301FB00443F4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32D6EB8725C301FA00443F4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D6EBE625C313E900443F4D /* Shaders.metal in Sources */,
+				32D6EBCD25C3096200443F4D /* Renderer.swift in Sources */,
+				32D6EBD425C30BDA00443F4D /* PhysarumView.swift in Sources */,
+				32D6EBC625C3093C00443F4D /* PhysarumViewController.swift in Sources */,
+				32D6EBAF25C301FB00443F4D /* ContentView.swift in Sources */,
+				32D6EBAD25C301FB00443F4D /* physarumApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D6EB8F25C301FB00443F4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D6EBE725C313E900443F4D /* Shaders.metal in Sources */,
+				32D6EBCE25C3096200443F4D /* Renderer.swift in Sources */,
+				32D6EBD525C30BDA00443F4D /* PhysarumView.swift in Sources */,
+				32D6EBC725C3093C00443F4D /* PhysarumViewController.swift in Sources */,
+				32D6EBB025C301FB00443F4D /* ContentView.swift in Sources */,
+				32D6EBAE25C301FB00443F4D /* physarumApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D6EB9725C301FB00443F4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D6EBA025C301FB00443F4D /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D6EBA225C301FB00443F4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D6EBAB25C301FB00443F4D /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32D6EB9D25C301FB00443F4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32D6EB8A25C301FA00443F4D /* physarum (iOS) */;
+			targetProxy = 32D6EB9C25C301FB00443F4D /* PBXContainerItemProxy */;
+		};
+		32D6EBA825C301FB00443F4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32D6EB9225C301FB00443F4D /* physarum (macOS) */;
+			targetProxy = 32D6EBA725C301FB00443F4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		32D6EBB325C301FB00443F4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		32D6EBB425C301FB00443F4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		32D6EBB625C301FB00443F4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29V7M66778;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tabak.physarum;
+				PRODUCT_NAME = physarum;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32D6EBB725C301FB00443F4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29V7M66778;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tabak.physarum;
+				PRODUCT_NAME = physarum;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		32D6EBB925C301FB00443F4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 29V7M66778;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tabak.physarum;
+				PRODUCT_NAME = physarum;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		32D6EBBA25C301FB00443F4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 29V7M66778;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tabak.physarum;
+				PRODUCT_NAME = physarum;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		32D6EBBC25C301FB00443F4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29V7M66778;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "tabak.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "physarum (iOS)";
+			};
+			name = Debug;
+		};
+		32D6EBBD25C301FB00443F4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29V7M66778;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "tabak.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "physarum (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		32D6EBBF25C301FB00443F4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 29V7M66778;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "tabak.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "physarum (macOS)";
+			};
+			name = Debug;
+		};
+		32D6EBC025C301FB00443F4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 29V7M66778;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "tabak.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "physarum (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32D6EB8225C301F900443F4D /* Build configuration list for PBXProject "physarum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D6EBB325C301FB00443F4D /* Debug */,
+				32D6EBB425C301FB00443F4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32D6EBB525C301FB00443F4D /* Build configuration list for PBXNativeTarget "physarum (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D6EBB625C301FB00443F4D /* Debug */,
+				32D6EBB725C301FB00443F4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32D6EBB825C301FB00443F4D /* Build configuration list for PBXNativeTarget "physarum (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D6EBB925C301FB00443F4D /* Debug */,
+				32D6EBBA25C301FB00443F4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32D6EBBB25C301FB00443F4D /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D6EBBC25C301FB00443F4D /* Debug */,
+				32D6EBBD25C301FB00443F4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32D6EBBE25C301FB00443F4D /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D6EBBF25C301FB00443F4D /* Debug */,
+				32D6EBC025C301FB00443F4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32D6EB7F25C301F900443F4D /* Project object */;
+}
