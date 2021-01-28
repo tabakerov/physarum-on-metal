@@ -82,15 +82,20 @@ kernel void compute_function(texture2d<half, access::read_write> texture [[textu
 kernel void blur_function(texture2d<half, access::read_write> texture [[texture(0)]],
                           uint2 index [[thread_position_in_grid]])
 {
+    const uint dimensions = 2000;
+    uint x0 = (index.x - 1 + dimensions) % dimensions;
+    uint x2 = (index.x + 1) % dimensions;
+    uint y0 = (index.y - 1 + dimensions) % dimensions;
+    uint y2 = (index.y + 1) % dimensions;
     half4 out = 1.0/4.0 * texture.read(index)
-    + 1.0/8.0 * texture.read(index+uint2(1,0))
-    + 1.0/8.0 * texture.read(index+uint2(-1,0))
-    + 1.0/8.0 * texture.read(index+uint2(0,1))
-    + 1.0/8.0 * texture.read(index+uint2(0,-1))
-    + 1.0/16.0 * texture.read(index+uint2(1,1))
-    + 1.0/16.0 * texture.read(index+uint2(-1,1))
-    + 1.0/16.0 * texture.read(index+uint2(1,-1))
-    + 1.0/16.0 * texture.read(index+uint2(-1,-1));
+    + 1.0/8.0 * texture.read(uint2(index.x, y0))
+    + 1.0/8.0 * texture.read(uint2(index.x, y2))
+    + 1.0/8.0 * texture.read(uint2(x0, index.y))
+    + 1.0/8.0 * texture.read(uint2(x2, index.y))
+    + 1.0/16.0 * texture.read(uint2(x0, y0))
+    + 1.0/16.0 * texture.read(uint2(x2, y0))
+    + 1.0/16.0 * texture.read(uint2(x0, y2))
+    + 1.0/16.0 * texture.read(uint2(x2, y2));
     texture.write(0.99*half4(out.rgba), index);
 }
 
